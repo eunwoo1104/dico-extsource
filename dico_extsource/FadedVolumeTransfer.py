@@ -1,11 +1,11 @@
 from typing import Any
-import discord
+from dico.voice import AudioBase
 
 from .PyAVSource import PyAVSource
 
 
-class FadedVolumeTransfer(discord.AudioSource):
-    def __init__(self, original: discord.AudioSource, volume: float = 1.0) -> None:
+class FadedVolumeTransfer(AudioBase):
+    def __init__(self, original: AudioBase, volume: float = 1.0) -> None:
         if not isinstance(original, PyAVSource):
             raise TypeError
 

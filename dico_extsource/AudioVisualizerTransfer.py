@@ -1,12 +1,12 @@
 from typing import Any
-import discord
+from dico.voice import AudioBase
 import numpy
 
 from .PyAVSource import PyAVSource
 
 
-class AudioVisualizerTransfer(discord.AudioSource):
-    def __init__(self, original: discord.AudioSource) -> None:
+class AudioVisualizerTransfer(AudioBase):
+    def __init__(self, original: AudioBase) -> None:
         if not isinstance(original, PyAVSource):
             raise TypeError
 

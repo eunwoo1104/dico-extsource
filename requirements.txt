@@ -1,2 +1,4 @@
 av==8.0.2
 youtube-dl==2020.9.6
+markdownify
+numpy

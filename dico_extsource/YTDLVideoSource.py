@@ -1,4 +1,4 @@
-import discord
+import dico
 from youtube_dl import extractor
 
 from dico_extsource.exceptions import NotSeekable
@@ -9,7 +9,7 @@ from .VideoSource import VideoSource
 
 class YTDLVideoSource(VideoSource):
     def __init__(
-        self, Data: dict, channel: discord.TextChannel, *args, **kwargs
+        self, Data: dict, channel: dico.Channel, *args, **kwargs
     ) -> None:
         super().__init__(channel, Data["url"], *args, **kwargs)
 
@@ -19,7 +19,7 @@ class YTDLVideoSource(VideoSource):
         return self.Data[key]
 
     @classmethod
-    async def create(cls, Query: str, channel: discord.TextChannel, *args, **kwargs):
+    async def create(cls, Query: str, channel: dico.Channel, *args, **kwargs):
         Data = await extract(Query, video=True)
 
         if isinstance(Data, list):

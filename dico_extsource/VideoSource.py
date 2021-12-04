@@ -6,7 +6,7 @@ import time
 import traceback
 
 import av
-import discord
+import dico
 
 from .PyAVSource import PyAVSource
 
@@ -14,7 +14,7 @@ from .PyAVSource import PyAVSource
 class VideoSource(PyAVSource):
     def __init__(
         self,
-        channel: discord.TextChannel,
+        channel: dico.Channel,
         *args,
         limit: int = 5,
         quality: int = 50,
@@ -63,7 +63,7 @@ class VideoSource(PyAVSource):
 
                 position, Image = FilteredScreenShots[-1]
 
-                File = discord.File(Image, filename="video.png")
+                File = dico.File(Image, name="video", extension="png")
 
                 self.send_task = self.loop.create_task(self.__send(file=File))
 

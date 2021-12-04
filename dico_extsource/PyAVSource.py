@@ -6,7 +6,7 @@ import threading
 import traceback
 
 import av
-import discord
+from dico.voice import AudioBase
 
 from .AudioFifo import AudioFifo
 from .utils.threadLock import withLock
@@ -19,7 +19,7 @@ AVOption = {
 }
 
 
-class PyAVSource(discord.AudioSource):
+class PyAVSource(AudioBase):
     def __init__(self, Source: str, AVOption: dict = AVOption) -> None:
         self.loop = asyncio.get_event_loop()
 

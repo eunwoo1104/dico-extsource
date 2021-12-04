@@ -1,10 +1,9 @@
 import asyncio
 from xml.etree import ElementTree
 
-import discord
+import dico
 from aiohttp import ClientSession
-from discord.channel import TextChannel
-from google.protobuf.duration_pb2 import Duration
+# from google.protobuf.duration_pb2 import Duration
 from markdownify import markdownify
 import re
 
@@ -173,18 +172,18 @@ class Lyrics:
     def start(self) -> None:
         self.loop.create_task(self._task())
 
-    def subcribe(self, channel: discord.TextChannel) -> None:
+    def subcribe(self, channel: dico.Channel) -> None:
         self.channel = channel
         self.start()
 
     def unsubcribe(self) -> None:
         self.channel = None
 
-    def _safe_delete(self, message: discord.Message, *args, **kwargs) -> None:
+    def _safe_delete(self, message: dico.Message, *args, **kwargs) -> None:
         return message.delete(*args, **kwargs)
 
-    def _safe_edit(self, message: discord.Message, *args, **kwargs) -> discord.Message:
-        return message.edit(*args, **kwargs)
+    def _safe_edit(self, message: dico.Message, **kwargs) -> dico.Message:
+        return message.edit(**kwargs)
 
     async def _task(self):
         if self.type == "srv1":

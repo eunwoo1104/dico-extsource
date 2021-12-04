@@ -2,12 +2,12 @@ import asyncio
 import audioop
 import queue
 
-import discord
+from dico.voice import AudioBase
 
 from dico_extsource.PyAVSource import PyAVSource
 
 
-class GaplessPlayer(discord.AudioSource):
+class GaplessPlayer(AudioBase):
     def __init__(self, *args) -> None:
         self.loop = asyncio.get_event_loop()
 

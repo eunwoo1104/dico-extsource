@@ -1,10 +1,10 @@
 import audioop
 from typing import Tuple, List
 from .PyAVSource import PyAVSource
-import discord
+from dico.voice import AudioBase
 
 
-class Mixer(discord.AudioSource):
+class Mixer(AudioBase):
     def __init__(self) -> None:
         self._volume: float = 1.0
         self._VOLUME_PER_SOURCE: float = 1.0

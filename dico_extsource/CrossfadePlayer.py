@@ -1,12 +1,12 @@
 import audioop
 import queue
 
-import discord
+from dico.voice import AudioBase
 
 from .PyAVSource import PyAVSource
 
 
-class CrossfadePlayer(discord.AudioSource):
+class CrossfadePlayer(AudioBase):
     def __init__(self, *args) -> None:
         self._volume = 1.0
         self._crossfade = 10.0
