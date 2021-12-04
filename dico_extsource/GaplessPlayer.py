@@ -4,7 +4,7 @@ import queue
 
 import discord
 
-from discord_extsource.PyAVSource import PyAVSource
+from dico_extsource.PyAVSource import PyAVSource
 
 
 class GaplessPlayer(discord.AudioSource):

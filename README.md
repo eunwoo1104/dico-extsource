@@ -1,1 +1,3 @@
-# discord_extsource
+# dico-extsource
+Fork of discord-extsource.  
+Supports dico `voice` branch.

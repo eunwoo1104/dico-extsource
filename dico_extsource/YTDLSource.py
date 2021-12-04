@@ -1,6 +1,6 @@
 from youtube_dl import extractor
 
-from discord_extsource.exceptions import NotSeekable
+from dico_extsource.exceptions import NotSeekable
 
 from .extractor import extract
 from .PyAVSource import PyAVSource

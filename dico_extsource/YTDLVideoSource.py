@@ -1,7 +1,7 @@
 import discord
 from youtube_dl import extractor
 
-from discord_extsource.exceptions import NotSeekable
+from dico_extsource.exceptions import NotSeekable
 
 from .extractor import extract
 from .VideoSource import VideoSource
