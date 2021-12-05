@@ -80,7 +80,7 @@ class Mixer(AudioBase):
         for index in DONE_SOURCES:
             del self._Tracks[index]
 
-        if self._volume != 1.0:
+        if self._volume != 1.0 and PCM:
             PCM = audioop.mul(PCM, 2, min(self._volume, 2.0))
             
         return PCM
