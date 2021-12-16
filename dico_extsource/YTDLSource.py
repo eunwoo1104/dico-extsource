@@ -1,4 +1,4 @@
-from youtube_dl import extractor
+from yt_dlp import extractor
 
 from dico_extsource.exceptions import NotSeekable
 

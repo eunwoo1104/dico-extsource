@@ -2,7 +2,7 @@ import asyncio
 import copy
 import re
 
-from youtube_dl import YoutubeDL as YoutubeDLClient
+from yt_dlp import YoutubeDL as YoutubeDLClient
 
 from .exceptions import NoSearchResults
 

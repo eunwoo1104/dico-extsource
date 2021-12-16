@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="UTF-8") as f:
 
 setuptools.setup(
     name="dico-extsource",
-    version="0.0.3",
+    version="0.0.4",
     author="eunwoo1104",
     author_email="sions04@naver.com",
     description="Enhanced Audio Source for dico.",
@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/eunwoo1104/dico-extsource",
     packages=setuptools.find_packages(),
     python_requires='>=3.7',
-    install_requires=["av", "youtube-dl", "markdownify", "numpy"],
+    install_requires=["av", "yt-dlp", "markdownify", "numpy"],
     classifiers=[
         "Programming Language :: Python :: 3"
     ]

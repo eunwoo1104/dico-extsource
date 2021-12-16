@@ -14,7 +14,7 @@ from .AudioFilter import AudioFilter
 from .mixer import Mixer
 from .AudioVisualizerTransfer import AudioVisualizerTransfer
 
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 
 # def __patch_opus():
 #     import discord.opus
