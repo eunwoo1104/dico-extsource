@@ -205,7 +205,7 @@ class Loader(threading.Thread):
                 if not self.Source.AudioFifo.haveToFillBuffer.is_set():
                     self.Source.AudioFifo.haveToFillBuffer.wait()
 
-                self.Source.AudioFifo.write(Frame)
+                [self.Source.AudioFifo.write(f) for f in Frame]
                 self.Source._position = _current_position
 
                 if self.Source._waitforread.locked():
