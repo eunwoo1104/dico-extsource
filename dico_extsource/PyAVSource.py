@@ -1,6 +1,7 @@
 import asyncio
 import audioop
 from .AudioFilter import AudioFilter
+from collections.abc import Iterable
 import functools
 import threading
 import traceback
@@ -205,7 +206,10 @@ class Loader(threading.Thread):
                 if not self.Source.AudioFifo.haveToFillBuffer.is_set():
                     self.Source.AudioFifo.haveToFillBuffer.wait()
 
-                [self.Source.AudioFifo.write(f) for f in Frame]
+                if isinstance(Frame, Iterable):
+                    [self.Source.AudioFifo.write(f) for f in Frame]
+                else:
+                    self.Source.AudioFifo.write(Frame)
                 self.Source._position = _current_position
 
                 if self.Source._waitforread.locked():
